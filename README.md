@@ -48,7 +48,7 @@ packer plugin install github.com/hashicorp/vagrant
 
 packer build debian.json
 
-Isso criará a imagem .box baseada na configuração do arquivo debian.json.
+*Isso criará a imagem .box baseada na configuração do arquivo debian.json.*
 
 **4. Adicionar a imagem ao Vagrant**
 
