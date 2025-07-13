@@ -1,13 +1,13 @@
 ## 🧾 Sobre o Projeto
 Este repositório tem como objetivo fornecer uma infraestrutura automatizada para criação e provisionamento de máquinas virtuais utilizando ferramentas modernas de DevOps. Ele reúne todos os arquivos e instruções necessários para:
 
-Construção de uma imagem base com o Packer
+- Construção de uma imagem base com o Packer 
 
-Gerenciamento da máquina virtual com o Vagrant
+- Gerenciamento da máquina virtual com o Vagrant
 
-Automatização da configuração do ambiente com o Ansible
+- Automatização da configuração do ambiente com o Ansible
 
-Execução em ambiente local com o VirtualBox
+- Execução em ambiente local com o VirtualBox
 
 A ideia é facilitar a criação de um ambiente de desenvolvimento ou testes que pode ser replicado de forma simples, padronizada e controlada.
 
@@ -37,13 +37,17 @@ git clone https://github.com/seu-usuario/packer-provadevops.git
 **2. Inicializar o Packer**
 
 Execute os comandos abaixo para preparar o ambiente:
+
 packer init .
+
 packer plugin install github.com/hashicorp/virtualbox
+
 packer plugin install github.com/hashicorp/vagrant
 
 **3. Gerar a imagem com o Packer**
 
 packer build debian.json
+
 Isso criará a imagem .box baseada na configuração do arquivo debian.json.
 
 **4. Adicionar a imagem ao Vagrant**
@@ -58,11 +62,13 @@ vagrant up
 **No terminal da máquina hospedeira, gere uma chave SSH (caso ainda não tenha):**
 
 ssh-keygen
+
 Pressione Enter em todas as opções. A chave será gerada em ~/.ssh/id_rsa.pub por padrão.
 
 **Em seguida, copie a chave para a máquina virtual:**
 
 ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@<IP_DA_VM>
+
 Substitua <IP_DA_VM> pelo IP real da sua máquina virtual.
 
 ## **⚙️ Executar os playbooks Ansible**
