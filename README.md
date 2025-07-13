@@ -113,8 +113,12 @@ ansible-playbook -i hosts install_argocd.yml
 ```bash 
 ansible-playbook -i hosts start_argocd.yml
 ```
+## Acessar pelo navegador
 
 **Suba a máquina virtual (se não tiver feito esse passo antes):**
+
+*Faça sempre o comando abaixo se não tiver feito no dia que queria acessar a maquina*
+
 ```bash 
 vagrant up
 ```
@@ -136,7 +140,7 @@ kubectl port-forward svc/frontend-front-projetofevops --address 0.0.0.0 8002:80 
 **No seu navegador (fora da VM), acesse:**
 
 ```bash
-http://<IP_DA_VM>:8000
+http://<IP_DA_VM>:8000 --mude a porta
 ```
 
 ## 📁 Estrutura do Projeto
