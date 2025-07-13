@@ -1,5 +1,17 @@
-## 🛠️ Packer - Provadevops
-Este repositório contém todos os arquivos necessários para o provisionamento das máquinas utilizadas no projeto Provadevops, incluindo o uso de ferramentas como Packer, Vagrant, Ansible e VirtualBox.
+## 🧾 Sobre o Projeto
+Este repositório tem como objetivo fornecer uma infraestrutura automatizada para criação e provisionamento de máquinas virtuais utilizando ferramentas modernas de DevOps. Ele reúne todos os arquivos e instruções necessários para:
+
+Construção de uma imagem base com o Packer
+
+Gerenciamento da máquina virtual com o Vagrant
+
+Automatização da configuração do ambiente com o Ansible
+
+Execução em ambiente local com o VirtualBox
+
+A ideia é facilitar a criação de um ambiente de desenvolvimento ou testes que pode ser replicado de forma simples, padronizada e controlada.
+
+Com este projeto, é possível provisionar uma VM Debian, instalar automaticamente ferramentas como Docker, Nginx, kubectl, Kind e ArgoCD, e levantar um cluster local com facilidade.
 
 ## 📋 Pré-requisitos
 Antes de começar, verifique se os seguintes requisitos estão atendidos:
@@ -56,13 +68,17 @@ Substitua <IP_DA_VM> pelo IP real da sua máquina virtual.
 ## **⚙️ Executar os playbooks Ansible**
 
 Navegue até o diretório onde estão os arquivos Ansible e execute os seguintes comandos:
+
 ansible-playbook -i hosts install_nginx.yml install_docker.yml install_kind.yml install_kubectl.yml
+
 ansible-playbook -i hosts raise_nodes.yml
+
 ansible-playbook -i hosts install_argocd.yml
 
 ## **♻️ Reiniciar o ArgoCD (quando necessário)**
 
 Após o ambiente estar provisionado, se desejar hostear novamente o ArgoCD, execute:
+
 ansible-playbook -i hosts start_argocd.yml
 
 ## 📁 Estrutura do Projeto
