@@ -1,7 +1,7 @@
-🛠️ **Packer - Provadevops**
+##🛠️ Packer - Provadevops
 Este repositório contém todos os arquivos necessários para o provisionamento das máquinas utilizadas no projeto Provadevops, incluindo o uso de ferramentas como Packer, Vagrant, Ansible e VirtualBox.
 
-📋 **Pré-requisitos**
+##📋 Pré-requisitos
 Antes de começar, verifique se os seguintes requisitos estão atendidos:
 
 - [Packer](https://www.packer.io/downloads) instalado  
@@ -14,7 +14,7 @@ Antes de começar, verifique se os seguintes requisitos estão atendidos:
 **⚠️ Os binários do Packer e Vagrant devem estar no mesmo diretório do arquivo packer.pkr.hcl.**
 
 
-**🚀 Passo a Passo**
+##**🚀 Passo a Passo**
 
 
 **1. Clonar o repositório**
@@ -37,7 +37,7 @@ vagrant box add debian12 debian12.box
 **5. Subir a máquina virtual com Vagrant**
 vagrant up
 
-**🔐 Configurar acesso SSH**
+##**🔐 Configurar acesso SSH**
 **No terminal da máquina hospedeira, gere uma chave SSH (caso ainda não tenha):**
 ssh-keygen
 Pressione Enter em todas as opções. A chave será gerada em ~/.ssh/id_rsa.pub por padrão.
@@ -46,13 +46,13 @@ Pressione Enter em todas as opções. A chave será gerada em ~/.ssh/id_rsa.pub 
 ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@<IP_DA_VM>
 Substitua <IP_DA_VM> pelo IP real da sua máquina virtual.
 
-**⚙️ Executar os playbooks Ansible**
+##**⚙️ Executar os playbooks Ansible**
 Navegue até o diretório onde estão os arquivos Ansible e execute os seguintes comandos:
 ansible-playbook -i hosts install_nginx.yml install_docker.yml install_kind.yml install_kubectl.yml
 ansible-playbook -i hosts raise_nodes.yml
 ansible-playbook -i hosts install_argocd.yml
 
-**♻️ Reiniciar o ArgoCD (quando necessário)**
+##**♻️ Reiniciar o ArgoCD (quando necessário)**
 Após o ambiente estar provisionado, se desejar hostear novamente o ArgoCD, execute:
 ansible-playbook -i hosts start_argocd.yml
 
