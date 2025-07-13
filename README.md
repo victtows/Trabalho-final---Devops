@@ -90,6 +90,8 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@<IP_DA_VM>
 
 *Substitua <IP_DA_VM> pelo IP real da sua máquina virtual.*
 
+**Lembre-se de sempre de modificar o arquivo Host**
+
 ## **⚙️ Executar os playbooks Ansible**
 
 *Navegue até o diretório onde estão os arquivos Ansible e execute os seguintes comandos:*
