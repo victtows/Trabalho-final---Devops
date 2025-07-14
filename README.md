@@ -168,3 +168,34 @@ http://<IP_DA_VM>:8000 --mude a porta
 │   ├── raise_nodes.yml
 │   └── start_argocd.yml
 ```
+
+
+🔧 Tecnologias Utilizadas e Justificativa
+
+Packer
+
+Utilizado para criar uma imagem base personalizada, garantindo a padronização dos ambientes usados durante o desenvolvimento e testes.
+
+Vagrant
+
+Foi escolhido por ser uma ferramenta prática de gerenciamento de VMs, usando a imagem gerada pelo Packer. Ele facilita a automação e reprodutibilidade do ambiente de desenvolvimento.
+
+Ansible
+
+Responsável por provisionar e configurar automaticamente a máquina virtual, instalando os pacotes e preparando o ambiente necessário para o projeto.
+
+Kubectl e Kind
+
+Usados para gerenciar o cluster Kubernetes dentro da VM. O Kind permitiu criar clusters locais de forma leve e rápida, e o kubectl foi essencial para interagir com esses clusters e aplicar os recursos (pods, services, etc).
+
+Nginx
+
+Foi utilizado para expor serviços web dentro do cluster, sendo o intermediário entre o Kubernetes e o acesso externo. No caso do frontend, o Nginx atuou como servidor web.
+
+ArgoCD
+
+Ferramenta escolhida para realizar o gerenciamento de deployments no cluster Kubernetes, utilizando como base os arquivos armazenados nos repositórios do GitHub. Ele automatiza a entrega contínua de forma declarativa.
+
+Docker
+
+Foi utilizado para empacotar o frontend como container, garantindo que ele possa ser executado de forma isolada e consistente em qualquer ambiente (local ou cluster).
