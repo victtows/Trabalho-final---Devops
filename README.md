@@ -115,6 +115,12 @@ ansible-playbook -i hosts install_argocd.yml
 ```bash 
 ansible-playbook -i hosts start_argocd.yml
 ```
+**Codigo para a key do argo**
+
+```bash 
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d; echo
+```
+
 ## Acessar pelo navegador
 
 **Suba a máquina virtual (se não tiver feito esse passo antes):**
