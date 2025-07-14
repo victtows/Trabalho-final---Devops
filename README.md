@@ -17,8 +17,7 @@ Com este projeto, é possível provisionar uma VM Debian, instalar automaticamen
 Antes de começar, verifique se os seguintes requisitos estão atendidos:
 
 - [Packer](https://www.packer.io/downloads) instalado  
-- [Vagrant](https://developer.hashicorp.com/vagrant/downloads) instalado  
-- [Python](https://www.python.org/downloads/) instalado  
+- [Vagrant](https://developer.hashicorp.com/vagrant/downloads) instalado    
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) instalado  
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads) instalado  
 - Chave SSH gerada para acesso à máquina virtual
